@@ -1,0 +1,10 @@
+interface:
+  display_name: GG → Pr Merger → PR Merger
+  short_description: Arbitrate between competing PRs, pick a winner, and fold in the best cherry-picks.
+  icon_small: ./assets/icon-small.svg
+  icon_large: ./assets/icon-large.png
+  brand_color: '#22C55E'
+  default_prompt: >-
+    Use pr-merger when the task is to compare competing PRs, pick a winner, or check whether a
+    follow-up PR still has anything worth porting before closure. Reference pr-merger/SKILL.md
+    when cross-referencing this skill.

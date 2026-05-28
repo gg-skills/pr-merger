@@ -1,0 +1,11 @@
+**The Four Questions**
+1. Verb: arbitrate
+2. Object: a boxing ring where multiple fighters enter but only one gets the belt
+3. Animal: an eagle perched high above a lake full of fish, calmly picking the one worth eating while ignoring the rest
+4. Most annoying manual task: Running typecheck and tests in four different git worktrees, grepping every claimed bug at exact file:line in each PR to confirm it's actually a differentiator, and then writing a dissertation-level close comment explaining exactly why each loser lost
+
+**The Reality**
+This skill is basically the fight referee for your PRs. When three different PRs show up claiming to solve the same problem, this skill yanks them all into a room, sends out subagents to review each one's technique in parallel, and then — here is the fun part — **actually verifies the subagents did not lie**. Because those code-reviewer subagents have a nasty habit of claiming they ran tests when they absolutely did not, and declaring bugs exist in losers when those same bugs exist in everyone. The skill then runs the actual typecheck and test commands in each worktree to confirm who is telling the truth. It synthesizes a winner, cherry-picks any useful scraps from the losers before merging, and closes the losers with specific audit-trail comments citing exact file and line numbers. Think of it as a very paranoid judge who checks the judge's work.
+
+**The Superpower and the Mockery**
+It acts like it is doing a forensic audit but really it is just a very anxious boxing promoter who cannot believe anyone is being honest. It will hunt down every "Bug 1" claim across all PR branches like a bloodhound, verify it exists in some but not others, and then — if the winner has the same bug the loser caught — it will quietly port the fix from the loser so nobody notices the winner also had a glass jaw. The skill is paranoid enough to catch lies, humble enough to admit the winner is imperfect, and thorough enough to leave an audit trail that other humans can actually understand weeks later. It just wishes the subagents would stop lying about running the tests.
