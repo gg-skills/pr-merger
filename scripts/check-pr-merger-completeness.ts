@@ -6,7 +6,7 @@
  * Verifies a PR merger operation against the 10-item PR Merger Quality Checklist.
  * 
  * Usage:
- *   npx tsx skills/pr-merger/scripts/check-pr-merger-completeness.ts
+ *   npx tsx .agents/skills/pr-merger/scripts/check-pr-merger-completeness.ts
  */
 
 import { argv } from "process";
