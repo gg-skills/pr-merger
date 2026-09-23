@@ -284,7 +284,7 @@ The same HEREDOC shape works for `gh pr merge --body "$(cat <<'EOF' ... EOF)"` a
 
 Repo-specific test scripts (e.g. `npm run test:queue`, `npm run test:profiles`,
 or whatever the package exposes) are usually fastest. Fall back to a direct test
-runner against a specific file (e.g. `npx tsx --test path/to/specific/test.ts`)
+runner against a specific file (e.g. `npx tsx --test path/to/specific/test.ts`[^rt])
 for narrowly-scoped suites.
 
 ## Calibration warnings
@@ -490,3 +490,5 @@ Load `references/cherry-pick-workflow.md` when: you are entering Phase 5
 produced a conflict or test failure you need to triage, or the first-pass
 Phase 6 verdict was "nothing worth porting" and you need the rigorous-pass
 recipe. Skip it for Phase 1–4 work — the SKILL.md body is sufficient there.
+
+[^rt]: `npx tsx` accepts any standard runner — `bunx tsx`, `pnpm dlx tsx`, `deno run -A npm:tsx`, `node --import tsx`, or `yarn dlx tsx`. The first five auto-fetch `tsx` on demand; only `node --import tsx` requires `tsx` to be installed locally first (`npm i -D tsx`, or `npm i -g tsx` if you cannot reach the npm registry). Bun users can also skip `tsx` entirely and run TypeScript directly via `bun <script>`. Pick whichever your project ships. The canonical runtime decision table lives in the `skills-manager` skill under `Runtime Selection` (only available when working in the full `gg-skills` monorepo).
